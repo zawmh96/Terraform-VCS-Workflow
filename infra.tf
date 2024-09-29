@@ -5,3 +5,11 @@ resource "aws_vpc" "rancher_vpc" {
     Name = "${var.prefix}-rancher-vpc"
   }
 }
+
+resource "aws_internet_gateway" "rancher_gateway" {
+  vpc_id = aws_vpc.rancher_vpc.id
+
+  tags = {
+    Name = "${var.prefix}-rancher-gateway"
+  }
+}
