@@ -9,6 +9,5 @@ terraform {
 }
 
 provider "aws" {
-  profile = "dev-programmatic-admin-role"
   region  = var.aws_region
 }
